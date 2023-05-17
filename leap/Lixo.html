@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #7d2ae8;
+        overflow: hidden;
+    }
+    
+    .container {
+        justify-content: center;
+        width: 50vw;
+        height: 55%;
+        display: inline-flex;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+
+    .login-card {
+        width: 15vw;
+        height: 50vh;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.685);
+        position: relative;
+        max-width: 50%;
+        min-width: 450px;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        min-height: 500px;
+        max-height: 5pt;
+    }
+
+    div#img-card {
+        width: 15vw;
+        height: 50vh;
+        background-color: #7d2ae8;
+        border-radius: 16px;
+        max-width: 50%;
+        min-width: 450px;
+        text-align: center;
+        position: relative;
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        min-height: 500px;
+        max-height: 5pt;
+    }
+
+    img {
+        width: 65%;
+        height: 100%;
+        
+    }
+
+    .login-title {
+        position: absolute;
+        font-family: Poppins, sans-serif;
+        color: #633773;
+        margin-top: 80px;
+        font-size: 20px;
+        top: 0%;
+        left: 10%;
+        font-weight: normal;
+    }
+
+    .login-title:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 89%;
+        bottom: -14%;
+        height: 2.8px;
+        width: 20px;
+        background: #7d2ae8;
+    }
+
+    i#envelope{
+        position: absolute;
+        color: #7d2ae8;
+        font-size: 19px;
+        left: 0%;
+        top: 23.5%;
+    }
+
+    i#key {
+        position: absolute;
+        font-size: 19px;
+        color: #7d2ae8;
+        left: 0%;
+        top: 23.5%;
+    }
+
+    input#email {
+        display: flex;
+        align-items: center;
+        height: 20px;
+        width: 87%;
+        margin: 10px;
+        outline: none;
+        position: relative;
+        top: 3%;
+        left: 5%;
+        border-style: none;
+        transition: all 0.3s ease;
+        font-family: Poppins, sans-serif;
+    }
+
+    div.contain-email {
+        position: absolute;
+        top: 34%;
+        left: 3.5%;
+        width: 83%;
+        height: 35px;
+        margin-left: 25px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.400);
+    }
+
+    div.contain-email:focus-within{
+        border-color: #7d2ae8;
+        transition: all 0.4s ease;
+    }
+
+    div.contain-email:not(:focus-within) {
+        border-color: rgba(0, 0, 0, 0.400);
+        transition: all 0.4s ease-out;
+    }
+
+    input#email::placeholder {
+        font-family: Ubuntu, sans-serif;
+        font-size: 12pt;
+    }
+
+    div.contain-pass {
+        position: absolute;
+        top: 46.5%;
+        left: 3.5%;
+        width: 83%;
+        height: 35px;
+        margin-left: 25px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.400);
+    }
+
+    input#pass {
+        display: flex;
+        align-items: center;
+        height: 21px;
+        width: 91%;
+        margin: 10px 0;
+        outline: none;
+        position: relative;
+        top: 3%;
+        left: 8%;
+        border-style: none;
+        transition: all 0.3s ease;
+        font-family: Poppins, sans-serif;
+    }
+
+    div.contain-pass:focus-within{
+        border-color: #7d2ae8;
+        transition: all 0.4s ease;
+    }
+
+    div.contain-pass:not(:focus-within) {
+        border-color: rgba(0, 0, 0, 0.400);
+        transition: all 0.4s ease-out;
+    }
+
+    input#pass::placeholder {
+        font-family: Ubuntu, sans-serif;
+        font-size: 12pt;
+    }
+
+    input#checkbox1 {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #000;
+        border-radius: 28%;
+        background-color: #fff;
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        top: 68%;
+        left: 13%;
+        transition: all 0.5s ease-in-out;
+    
+    }
+
+    input#checkbox1:not(:checked) {
+        background-color: #fff;
+        transition: all 0.4s ease-in-out;
+    }
+
+    label#checkbox-text {
+        font-family: Ubuntu, sans-serif;
+        font-size: 10pt;
+        position: absolute;
+        top: 68.3%;
+        left: 19.3%;
+    }
+
+    i#check {
+        color: rgb(0, 201, 0);
+        position: absolute;
+        top: 68.5%;
+        left: 13.4%;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    #checkbox1:checked ~ i {
+        opacity: 1;
+    }
+
+    div.forget-pass {
+        position: absolute;
+        top: 57%;
+        left: 13%;
+    }
+
+    a {
+        text-decoration: none;
+        color: #7d2ae8;
+        font-family: Ubuntu, sans-serif;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: red;
+    }
+
+    input#acess {
+        position: absolute;
+        left: 45%;
+        top: 75%;
+    }
+
+    input#acess {
+        width: 80%;
+        height: 50px;
+        position: absolute;
+        top: 83%;
+        left: 10.3%;
+        border-radius: 6px;
+        background-color: #7c2cec;
+        border: none;
+        font-family: Ubuntu, sans-serif;
+        font-size: 13pt;
+        color: #fff;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.445);
+    }
+
+    input#acess:hover {
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div id="img-card">
+        <img src="https://64.media.tumblr.com/63354de3f9ace39db824d7b2eee74a0e/1b48259753feee11-a1/s400x600/5da223eeb3546d6323fa312087fb7aa610c09de1.pnj" alt="img-card" id="img-card">
+    </div>
+
+    <div class="login-card">
+
+        <h1 class="login-title">Login</h1>
+
+        <label id="user-login" for="user-login"></label>
+
+    
+    <div class="contain-email">
+        <input type="text" name="name" id="email" placeholder="Entre com email" required>
+        <i class="fas fa-envelope" id="envelope"></i>
+    </div>
+
+    <label id="user-pass" for="user-pass"></label>
+
+    <div class="contain-pass">
+        <input type="password" name="pass" id="pass" placeholder="Entre com a senha" required>
+        <i class="fas fa-sharp fa-solid fa-key" id="key"></i>
+    </div>
+
+    <div class="forget-pass">
+        <a id="forgetpass" href="#">
+            <p>Esqueceu sua Senha?</p>
+        </a>
+    </div>
+
+        <input type="checkbox" name="checkbox" id="checkbox1">
+        <label id="checkbox-text" for="checkbox">Lembrar meu Usuário</label>
+    <input id="acess" type="submit" value="Acessar">
+
+    <i id="check" class="fas fa-check"></i>
+
+<script>
+    let forgetpass = document.querySelector('forgetpass')
+    let div = document.querySelector('login-card')
+
+    forgetpass.addEventListener('click', function() {
+        div.style.transform = 'rotateY(180deg)'
+    })
+</script>
+
+</div>
+</div>
+</body>
+</html>
